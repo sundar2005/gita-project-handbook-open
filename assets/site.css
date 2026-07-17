@@ -321,3 +321,19 @@ thead th{ background:var(--peacock-soft); color:var(--peacock-deep);
   background:linear-gradient(180deg, var(--accent-soft), var(--card)); }
 .journey a.start-here .wk{ color:var(--accent); }
 .journey a.start-here:hover{ border-color:var(--peacock); }
+
+/* Chapter digest: summary + voices of the tradition */
+.chsum{background:linear-gradient(180deg, color-mix(in srgb,var(--peacock-soft) 60%, var(--card)), var(--card)); border:1px solid var(--line); border-left:4px solid var(--peacock); border-radius:12px; padding:1.05rem 1.25rem; margin:.8rem 0 1.2rem; box-shadow:var(--shadow);}
+.chsum p{margin:0;}
+.voices-lead{color:var(--ink-soft); font-style:italic; margin:.3rem 0 .8rem;}
+.box.threads{border-left:4px solid var(--accent);}
+/* Voices: commentary rows (no empty grid cells) */
+.voices{ display:block; margin:.6rem 0 1.4rem; border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:var(--shadow); }
+.voice{ display:grid; grid-template-columns:12.5rem 1fr; gap:0; align-items:start; background:none; border:0; border-top:1px solid var(--line); border-radius:0; box-shadow:none; padding:1.15rem 1.35rem; }
+.voice:first-child{ border-top:0; }
+.voice:nth-child(even){ background:color-mix(in srgb, var(--peacock-soft) 32%, transparent); }
+.voice .v-head{ padding-right:1.1rem; }
+.voice .v-name{ display:block; margin:0; font-family:var(--deva),var(--serif); font-size:1.15rem; font-weight:600; color:var(--peacock-deep); line-height:1.22; }
+.voice .v-trad{ display:block; margin:.22rem 0 0; font-family:var(--sans); font-size:.62rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--accent); }
+.voice .v-body{ margin:0; border-left:2px solid var(--accent); padding-left:1.35rem; font-size:.97rem; line-height:1.62; }
+@media (max-width:640px){ .voice{ grid-template-columns:1fr; padding:1rem 1.05rem; } .voice .v-head{ padding-right:0; margin-bottom:.5rem; padding-bottom:.5rem; border-bottom:1px solid var(--line); } .voice .v-body{ border-left:0; padding-left:0; } }
