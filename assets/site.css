@@ -347,3 +347,69 @@ thead th{ background:var(--peacock-soft); color:var(--peacock-deep);
 .voice .v-trad{ display:block; margin:.22rem 0 0; font-family:var(--sans); font-size:.62rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--accent); }
 .voice .v-body{ margin:0; border-left:2px solid var(--accent); padding-left:1.35rem; font-size:.97rem; line-height:1.62; }
 @media (max-width:640px){ .voice{ grid-template-columns:1fr; padding:1rem 1.05rem; } .voice .v-head{ padding-right:0; margin-bottom:.5rem; padding-bottom:.5rem; border-bottom:1px solid var(--line); } .voice .v-body{ border-left:0; padding-left:0; } }
+
+/* ——— Story tables (docx tables 1–5) ——— */
+/* Appendix A timeline — question cards with ghost numerals */
+.qgrid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; margin:1.3rem 0; }
+@media (max-width:34rem){ .qgrid{ grid-template-columns:1fr; } }
+.qcard{ position:relative; overflow:hidden; background:var(--card); border:1px solid var(--line);
+  border-radius:12px; padding:.85rem 1rem .9rem; box-shadow:var(--shadow); }
+.qcard .q-num{ position:absolute; right:.45rem; top:-.6rem; font-family:var(--serif); font-size:3.4rem;
+  font-weight:700; line-height:1.2; color:var(--accent); opacity:.16; pointer-events:none; }
+.qcard .q-theme{ display:block; font-family:var(--sans); font-size:.68rem; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--peacock-deep); }
+.qcard .q-q{ margin:.3rem 0 .55rem; font-size:1.06rem; font-style:italic; line-height:1.45; }
+.qcard .q-virtue{ display:inline-block; font-family:var(--sans); font-size:.7rem; font-weight:700;
+  letter-spacing:.05em; text-transform:uppercase; color:var(--peacock-deep);
+  background:var(--peacock-soft); border-radius:999px; padding:.22rem .6rem; }
+/* The Eighteen Yogas — numbered ledger */
+.yogas{ list-style:none; counter-reset:yoga; margin:1.3rem 0; padding:0; }
+.yogas li{ counter-increment:yoga; display:grid; grid-template-columns:2.2rem 1fr; column-gap:.7rem;
+  padding:.55rem .2rem; border-bottom:1px solid var(--line); }
+.yogas li::before{ content:counter(yoga,decimal-leading-zero); grid-row:1 / span 2;
+  font-family:var(--serif); font-size:1.15rem; color:var(--accent); padding-top:.05rem; }
+.yogas .y-name{ grid-column:2; font-style:italic; font-weight:600; color:var(--peacock-deep); }
+.yogas .y-teach{ grid-column:2; font-size:.95rem; }
+/* The Character Journey — verb litany */
+.charj{ list-style:none; counter-reset:cj; margin:1.3rem 0; padding:0; }
+.charj li{ counter-increment:cj; display:flex; align-items:baseline; flex-wrap:wrap; gap:.25rem .65rem;
+  padding:.5rem .2rem; border-bottom:1px solid var(--line); }
+.charj li::before{ content:counter(cj); flex:0 0 1.4rem; font-family:var(--sans); font-size:.72rem;
+  font-weight:700; color:var(--ink-soft); }
+.charj .c-verb{ flex:0 0 7.4rem; font-family:var(--serif); font-style:italic; font-weight:700; color:var(--accent); }
+.charj .c-dharma{ flex:1 1 12rem; font-size:.95rem; }
+.charj .c-virtue{ margin-left:auto; font-family:var(--sans); font-size:.68rem; font-weight:700;
+  letter-spacing:.05em; text-transform:uppercase; color:var(--peacock-deep);
+  background:var(--peacock-soft); border-radius:999px; padding:.2rem .55rem; white-space:nowrap; }
+/* The Journey in Two Voices — dialogue rails */
+.voices{ list-style:none; margin:1.3rem 0; padding:0; }
+.voices li{ position:relative; display:grid; grid-template-columns:1fr 1fr; gap:.7rem; padding:.65rem 0 .65rem 2.1rem; }
+.voices li + li{ border-top:1px dashed var(--line); }
+.voices .vo-num{ position:absolute; left:0; top:.85rem; width:1.5rem; height:1.5rem; line-height:1.5rem;
+  text-align:center; font-family:var(--sans); font-size:.72rem; font-weight:700;
+  color:var(--paper); background:var(--peacock); border-radius:50%; }
+.voices p{ margin:0; font-size:.95rem; }
+.voices .vo-arjuna{ border-left:3px solid var(--accent); padding-left:.7rem; font-style:italic; }
+.voices .vo-mine{ border-left:3px solid var(--peacock); padding-left:.7rem; }
+.voices .vo-tag{ display:block; font-family:var(--sans); font-style:normal; font-size:.62rem; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:.15rem; }
+@media (max-width:34rem){ .voices li{ grid-template-columns:1fr; gap:.45rem; } }
+/* The GITA Project Framework — five-stage journey path (same spine family as .phases) */
+.frame{ position:relative; display:flex; flex-direction:column; gap:1rem; margin:1.4rem 0;
+  padding-left:1.9rem; counter-reset:stg; }
+.stage{ position:relative; background:var(--card); border:1px solid var(--line);
+  border-radius:12px; padding:.9rem 1.15rem; box-shadow:var(--shadow); counter-increment:stg; }
+.stage::before{ content:""; position:absolute; left:-1.7rem; top:1rem; width:.6rem; height:.6rem;
+  background:var(--accent); transform:rotate(45deg); border-radius:2px; box-shadow:0 0 0 4px var(--paper); }
+.stage:nth-child(2)::before{ background:color-mix(in srgb, var(--accent) 75%, var(--peacock)); }
+.stage:nth-child(3)::before{ background:color-mix(in srgb, var(--accent) 50%, var(--peacock)); }
+.stage:nth-child(4)::before{ background:color-mix(in srgb, var(--accent) 25%, var(--peacock)); }
+.stage:last-child::before{ background:var(--peacock); }
+.stage:not(:last-child)::after{ content:""; position:absolute; left:-1.45rem; top:1.65rem; width:2px;
+  height:calc(100% + .35rem); border-radius:1px; opacity:.5;
+  background:linear-gradient(180deg, var(--accent), var(--peacock)); }
+.stage .st-name{ font-family:var(--sans); font-size:.72rem; font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--accent); }
+.stage .st-name::before{ content:"Stage " counter(stg) " · "; color:var(--ink-soft); }
+.stage .st-t{ margin:.25rem 0 .3rem; font-size:1.02rem; color:var(--peacock-deep); font-weight:600; }
+.stage .st-i{ margin:0; font-size:.95rem; font-style:italic; color:var(--ink-soft); }
